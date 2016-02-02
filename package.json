@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Webpack starter pack using Typescript, Jade, Bootstrap",
   "scripts": {
-    "build": "rimraf dist && webpack"
+    "build": "rimraf dist && webpack",
+    "deploy": "./deploy.sh"
   },
   "dependencies": {
     "autoprefixer": "^6.3.1",
