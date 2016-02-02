@@ -40,3 +40,10 @@ sudo npm install npm -g
 - Separate `dev` and `prod` configs
 - `dev` setup with watcher and reload
 
+## Credits
+
+- [Typescript](http://www.typescriptlang.org/)
+- [Webpack](https://webpack.github.io/)
+- [Jade](http://jade-lang.com/)
+- [Bootstrap](http://getbootstrap.com/)
+- [`git-directory-deploy`](https://github.com/X1011/git-directory-deploy)
