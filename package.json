@@ -4,7 +4,8 @@
   "description": "Webpack starter pack using Typescript, Jade, Bootstrap",
   "scripts": {
     "build": "rimraf dist && webpack",
-    "deploy": "./deploy.sh"
+    "deploy": "./deploy.sh",
+    "install": "if [ ! -f deploy.sh ]; then wget https://github.com/X1011/git-directory-deploy/raw/master/deploy.sh; chmod +x deploy.sh; fi"
   },
   "dependencies": {
     "autoprefixer": "^6.3.1",
