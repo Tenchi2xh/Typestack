@@ -1,0 +1,32 @@
+{
+  "name": "typestack",
+  "version": "1.0.0",
+  "description": "Webpack starter pack using Typescript, Jade, Bootstrap",
+  "scripts": {
+    "build": "rimraf dist && webpack"
+  },
+  "dependencies": {
+    "autoprefixer": "^6.3.1",
+    "bootstrap": "^3.3.6",
+    "css-loader": "^0.23.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "html-webpack-plugin": "^2.7.2",
+    "jade": "^1.11.0",
+    "jade-loader": "^0.8.0",
+    "jquery": "^2.2.0",
+    "path": "^0.12.7",
+    "rimraf": "^2.5.1",
+    "ts-loader": "^0.8.0",
+    "typescript": "^1.7.5",
+    "webpack": "^1.12.12"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "typescript",
+    "webpack",
+    "markdown"
+  ],
+  "author": "Tenchi <tenchi@team2xh.net>",
+  "license": "MIT"
+}

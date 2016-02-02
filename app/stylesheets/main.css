@@ -1,0 +1,6 @@
+@import "./fonts.css";
+
+body {
+	font-family: "Source Code Pro";
+	font-weight: 300;
+}
