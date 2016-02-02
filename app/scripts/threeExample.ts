@@ -8,7 +8,9 @@ function sampleScene(width: number, height: number): HTMLCanvasElement {
     let near: number = 0.1;
     let far: number = 10000;
 
-    let renderer: three.Renderer = new three.WebGLRenderer();
+    let renderer: three.Renderer = new three.WebGLRenderer({
+        antialias: true
+    });
     let camera: three.Camera = new three.PerspectiveCamera(fov, ratio, near, far);
     let scene: three.Scene = new three.Scene();
 
@@ -17,11 +19,17 @@ function sampleScene(width: number, height: number): HTMLCanvasElement {
 
     addSphere(scene);
 
-    addLight(scene, 0xFF0000, new three.Vector3(130,  100, 0));
-    addLight(scene, 0x00FF00, new three.Vector3(130,    0, 0));
-    addLight(scene, 0x0000FF, new three.Vector3(130, -100, 0));
+    addPointLight(scene, 0xCC0000, new three.Vector3(130,  100, 0));
+    addPointLight(scene, 0x00CC00, new three.Vector3(130,    0, 0));
+    addPointLight(scene, 0x0000CC, new three.Vector3(130, -100, 0));
 
-    renderer.setSize(width, height);
+    scene.add(new three.AmbientLight(0x222222));
+
+    let devicePixelRatio: number = window.devicePixelRatio || 1
+    renderer.setSize(width * devicePixelRatio, height * devicePixelRatio);
+    renderer.domElement.style.width = width + "px";
+    renderer.domElement.style.height = height + "px";
+
     setTimeout(() => renderLoop(renderer, scene, camera), 10);
     return renderer.domElement;  
 }
@@ -52,7 +60,7 @@ function renderLoop(renderer: three.Renderer, scene: three.Scene, camera: three.
 }
 
 function addSphere(scene: three.Scene): three.Mesh {
-    let geometry: three.Geometry = new three.SphereGeometry(50, 16, 16);
+    let geometry: three.Geometry = new three.SphereGeometry(50, 32, 32);
     let material: three.Material = new three.MeshPhongMaterial({
         color: 0xFFFFFF
     });
@@ -62,7 +70,7 @@ function addSphere(scene: three.Scene): three.Mesh {
     return sphere;
 }
 
-function addLight(scene: three.Scene, color: number, position: three.Vector3): three.Light {
+function addPointLight(scene: three.Scene, color: number, position: three.Vector3): three.Light {
     let light: three.Light = new three.PointLight(color);
     light.position.x = position.x;
     light.position.y = position.y;
