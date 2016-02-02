@@ -17,7 +17,7 @@ module.exports = {
   },
   devtool: "source-map",
   resolve: {
-    extensions: ["", ".webpack.js", ".web.js", ".ts", ".js"],
+    extensions: ["", ".ts", ".js"],
     modulesDirectories: ["node_modules", bootstrapPath]
   },
   module: {
