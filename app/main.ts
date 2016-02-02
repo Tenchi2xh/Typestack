@@ -4,10 +4,11 @@ require("./stylesheets/main.css");
 
 // Import NPM dependencies
 import jquery = require("jquery");
+import three = require("three");
 
 // Import local dependencies
-import greeter = require("./scripts/greeter");
+import threeExample = require("./scripts/threeExample");
 
 jquery(() => {
-    jquery('#greet').html(greeter("World"));
-})
+    jquery('#container').append(threeExample(800, 600));
+});
