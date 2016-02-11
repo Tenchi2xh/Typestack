@@ -11,9 +11,9 @@ module.exports = {
     app: "./app/main.ts"
   },
   output: {
-    path: "./dist",
+    path: path.resolve(__dirname, "./dist"),
     publicPath: "./",
-    filename: "[name].js?[chunkhash]"
+    filename: "[name].js?[hash]"
   },
   devtool: "source-map",
   resolve: {
